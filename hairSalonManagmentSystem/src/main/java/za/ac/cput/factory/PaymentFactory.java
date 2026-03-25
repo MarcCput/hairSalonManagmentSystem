@@ -1,23 +1,26 @@
 package za.ac.cput.factory;
 
-import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Payment;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class PaymentFactory {
 
-class PaymentFactoryTest {
+    public static Payment createPayment(String paymentId, double amount, String paymentMethod){
+        if(paymentId == null || paymentId.isEmpty()){
+            return null;
+        }
 
+        if(amount <= 0){
+            return null;
+        }
 
-    @Test
-    void testCreatePaymentSuccess() {
-        Payment p = PaymentFactory.createPayment("PAY-101", 500.0, "Credit Card");
-        assertNotNull(p);
-        System.out.println(p.toString());
-    }
+        if(paymentMethod == null || paymentMethod.isEmpty()){
+            return null;
+        }
 
-    @Test
-    void testCreatePaymentFail() {
-        Payment p = PaymentFactory.createPayment("", 0.0, ""); // Invalid data
-        assertNull(p);
+        return new Payment.Builder()
+                .setPaymentId(paymentId)
+                .setAmount(amount)
+                .setPaymentMethod(paymentMethod)
+                .build();
     }
 }
