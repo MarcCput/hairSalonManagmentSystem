@@ -1,1 +1,0 @@
-import{a as s}from"./client-CgSH0J_3.js";const i={listActive:()=>s.get("/services/active"),list:()=>s.get("/services"),get:e=>s.get(`/services/${e}`),create:e=>s.post("/services",e),delete:e=>s.delete(`/services/${e}`)};export{i as s};
