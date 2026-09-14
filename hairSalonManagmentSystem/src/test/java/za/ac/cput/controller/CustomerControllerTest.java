@@ -11,6 +11,7 @@ import za.ac.cput.domain.Customer;
 import za.ac.cput.service.ICustomerService;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
@@ -64,5 +65,29 @@ public class CustomerControllerTest {
         verify(service, org.mockito.Mockito.never()).registerWithDetails(any(), any(), any(), any(), any());
     }
 
+    @Test
+    @DisplayName("getAll() delegates to service.getAll()")
+    void getAll_delegatesToService() {
+        List<Customer> customers = List.of(mock(Customer.class), mock(Customer.class));
+        when(service.getAll()).thenReturn(customers);
 
+        assertEquals(customers, controller.getAll());
+    }
+
+    @Test
+    @DisplayName("getAll() delegates to service.findByEmail()")
+    void findByEmail_delegatesToService() {
+        Customer customer = mock(Customer.class);
+        when(service.findByEmail("jane@gmail.com")).thenReturn(customer);
+
+        assertEquals(customer, controller.findByEmail("jane@gmail.com"));
+    }
+
+    @Test
+    @DisplayName("delete() delegates to service.delete()")
+    void delete_delegatesToService() {
+        controller.delete("c1");
+
+        verify(service).delete("c1");
+    }
 }
