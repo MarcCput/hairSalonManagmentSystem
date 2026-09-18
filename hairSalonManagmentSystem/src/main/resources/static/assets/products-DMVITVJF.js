@@ -1,1 +1,0 @@
-import{a as o}from"./client-CgSH0J_3.js";const c={list:()=>o.get("/products"),lowStock:()=>o.get("/products/low-stock"),create:t=>o.post("/products",t),adjustStock:(t,s)=>o.post(`/products/${t}/adjust-stock`,{delta:s}),delete:t=>o.delete(`/products/${t}`)};export{c as p};

@@ -1,1 +1,0 @@
-import{a as o}from"./client-CgSH0J_3.js";const n={book:t=>o.post("/appointments/book",t),byCustomer:t=>o.get(`/appointments/customer/${t}`),list:()=>o.get("/appointments"),confirm:t=>o.post(`/appointments/${t}/confirm`),cancel:t=>o.post(`/appointments/${t}/cancel`),complete:t=>o.post(`/appointments/${t}/complete`)};export{n as a};
