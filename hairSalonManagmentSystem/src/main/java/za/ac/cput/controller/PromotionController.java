@@ -47,4 +47,7 @@ public class PromotionController {
     public void delete(@PathVariable String id) {
         service.delete(id);
     }
+
+
 }
+
