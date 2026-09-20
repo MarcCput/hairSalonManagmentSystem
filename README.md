@@ -1,5 +1,5 @@
 # 💇‍♀️ Hair Salon Management System  
-A full-stack salon booking and management platform: a **Spring Boot** REST API paired with a **Vue 3** single-page application. Customers book appointments online and pay in store, stylists see their own schedule, and administrators manage every part of the business — services, staff, stock, promotions, payments and feedback.
+A full-stack salon booking and management platform: a **Spring Boot** REST API paired with a **Vue 3** single-page application. Customers book appointments online and pay in store, stylists see their own schedule, and administrators manage every part of the business services, staff, stock, promotions, payments and feedback.
 
 ---
 
