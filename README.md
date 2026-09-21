@@ -291,7 +291,7 @@ hairSalonManagementSystem-frontend/    <- the Vue 3 SPA
 
 ---
 
-## 👥 Team
+##  Team
 
 **Leader**
 - *Marc Kabala* — System coordination & architecture
@@ -308,6 +308,6 @@ hairSalonManagementSystem-frontend/    <- the Vue 3 SPA
 
 ---
 
-## 📊 UML Class Diagram
+##  UML Class Diagram
 
 <img width="1980" height="1800" alt="assignment1UML" src="https://github.com/user-attachments/assets/860ca28a-36cb-4f49-9b79-9fb5def4e2a6" />
