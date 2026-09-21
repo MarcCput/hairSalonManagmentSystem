@@ -41,7 +41,7 @@ Business rules live in the **service layer** and are enforced regardless of whic
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 ### Backend
 
@@ -70,7 +70,7 @@ Business rules live in the **service layer** and are enforced regardless of whic
 
 ---
 
-## 🏛 Architecture
+##  Architecture
 
 The backend is a **layered, DDD-flavoured** Spring Boot application under the `za.ac.cput` package. Every layer has exactly one job, so a change to "how a promotion discount is calculated" only ever touches the service layer, and a change to a JSON response shape only ever touches the web layer.
 
@@ -129,7 +129,7 @@ Every thrown exception is converted to one consistent body:
 
 ---
 
-## 🧩 Domain Model
+##  Domain Model
 
 **12 entities**, each with a full repository → service → controller stack:
 
@@ -155,7 +155,7 @@ Each exposes its raw form via `@JsonValue`, so they serialise as plain strings a
 
 ---
 
-## 🌐 REST API
+##  REST API
 
 Base URL: `http://localhost:8080/api` · Interactive docs: `http://localhost:8080/swagger-ui.html`
 
@@ -178,7 +178,7 @@ Every resource supports the standard set (`POST` create, `GET /{id}`, `GET` list
 
 ---
 
-## 📅 The Booking & In-Store Payment Workflow
+##  The Booking & In-Store Payment Workflow
 
 **There is no online payment, by design.** Money changes hands at the salon. The flow is:
 
@@ -190,7 +190,7 @@ Every resource supports the standard set (`POST` create, `GET /{id}`, `GET` list
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -251,7 +251,7 @@ The app comes up on **`http://localhost:5173`** and talks to the backend at `htt
 
 ---
 
-## 📂 Repository Layout
+##  Repository Layout
 
 The system lives in three sibling projects:
 
