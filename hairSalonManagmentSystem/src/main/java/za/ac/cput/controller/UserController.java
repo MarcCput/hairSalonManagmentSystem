@@ -11,7 +11,8 @@ import za.ac.cput.domain.User;
 
 import java.util.List;
 
-
+@RestController
+@RequestMapping("/api/users")
 public class UserController {
     private final IUserService service;
     private final IRoleService roleService;

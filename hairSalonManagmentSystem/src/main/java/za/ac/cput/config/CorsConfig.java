@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-/** Allows the local Vue/React dev server ("Salon Booking App") to call this API during development. */
+/** Allows the local Vue dev server ("Salon Booking App") to call this API during development. */
 @Configuration
 public class CorsConfig {
 
