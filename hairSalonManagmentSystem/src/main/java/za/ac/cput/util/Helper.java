@@ -5,6 +5,7 @@ import za.ac.cput.domain.enums.LoyaltyTier;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.security.SecureRandom;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
@@ -30,6 +31,13 @@ public class Helper {
     private static final int SILVER_THRESHOLD = 500;
     private static final int GOLD_THRESHOLD = 2000;
     private static final int PLATINUM_THRESHOLD = 5000;
+
+    // Entity ID generation: 9 uppercase alphanumeric characters, e.g. "K3M8QPSXA".
+    // keep accidental collisions negligible at any realistic salon data volume.
+    private static final String ID_ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private static final int ID_LENGTH = 9;
+    private static final SecureRandom ID_RANDOM = new SecureRandom();
+
 
     private Helper() {}
 
