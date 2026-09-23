@@ -66,12 +66,17 @@ public class Helper {
 
     /** True if the string looks like a valid SA phone number (local or +27 format). */
     public static boolean isValidPhoneNumber(String phoneNumber) {
-        return !isNullOrEmpty(phoneNumber) && PHONE_PATTERN.matcher(phoneNumber.trim()).matches();
+        return !isNullOrEmpty(phoneNumber) &&
+                PHONE_PATTERN.matcher(phoneNumber.trim()).matches();
     }
 
     /** Generates a new random unique ID, used as the primary key for every entity. */
     public static String generateId() {
-        return UUID.randomUUID().toString();
+        StringBuilder id = new StringBuilder(ID_LENGTH);
+        for (int i = 0; i < ID_LENGTH; i++) {
+            id.append(ID_ALPHABET.charAt(ID_RANDOM.nextInt(ID_ALPHABET.length())));
+        }
+        return id.toString();
     }
 
     /** Generates a unique, human-scannable transaction reference for a Payment, e.g. TXN-1893XXXXXX-AB12. */
