@@ -1,0 +1,1 @@
+import{J as t}from"./index-DjL6h-cx.js";const c={list:()=>t.get("/feedback"),byCustomer:e=>t.get(`/feedback/customer/${e}`),create:e=>t.post("/feedback",e),delete:e=>t.delete(`/feedback/${e}`)};export{c as f};

@@ -13,6 +13,13 @@ public class User {
     private String userId;
     private String username;
 
+    /**
+     * Chapter 9's `passwd` field. Stored as a BCrypt hash, never plain text - the chapter's
+     * MD5 example (9.7.2) is no longer safe: MD5 is fast and unsalted, so a leaked table can
+     * be brute-forced offline. BCrypt is deliberately slow and salts every hash.
+     */
+    private String password;
+
     @Embedded
     @AttributeOverride(name = "value", column = @Column(name = "email"))
     private Email email;
@@ -31,6 +38,7 @@ public class User {
     public User(Builder builder) {
         this.userId    = builder.userId;
         this.username  = builder.username;
+        this.password  = builder.password;
         this.email     = builder.email;
         this.firstName = builder.firstName;
         this.lastName  = builder.lastName;
@@ -41,6 +49,7 @@ public class User {
 
     public String getUserId()          { return userId; }
     public String getUsername()        { return username; }
+    public String getPassword()        { return password; }
     public Email getEmail()            { return email; }
     public String getFirstName()       { return firstName; }
     public String getLastName()        { return lastName; }
@@ -51,6 +60,7 @@ public class User {
     public static class Builder {
         private String userId;
         private String username;
+        private String password;
         private Email email;
         private String firstName;
         private String lastName;
@@ -63,6 +73,11 @@ public class User {
         }
         public Builder setUsername(String username) {
             this.username = username; return this;
+        }
+
+        /** Takes the ALREADY-HASHED password; hashing happens in the service layer. */
+        public Builder setPassword(String password) {
+            this.password = password; return this;
         }
         public Builder setEmail(Email email) {
             this.email = email; return this;

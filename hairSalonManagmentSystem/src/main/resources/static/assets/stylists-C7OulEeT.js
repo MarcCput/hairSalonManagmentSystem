@@ -1,1 +1,0 @@
-import{a as s}from"./client-DsO697nw.js";const l={listActive:()=>s.get("/stylists/active"),list:()=>s.get("/stylists"),get:t=>s.get(`/stylists/${t}`),create:t=>s.post("/stylists",t),update:(t,e)=>s.put(`/stylists/${t}`,e),delete:t=>s.delete(`/stylists/${t}`)};export{l as s};
